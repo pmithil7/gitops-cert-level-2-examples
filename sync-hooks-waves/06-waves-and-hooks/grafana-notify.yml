@@ -4,7 +4,9 @@ metadata:
   namespace: example06
   generateName: grafana-notify-
   labels:
-    codefresh.io/cert: grafana-job  
+    codefresh.io/cert: grafana-job
+  annotations:
+      argocd.argoproj.io/sync-wave: "-10"
 spec:
   template:
     spec:
@@ -15,4 +17,4 @@ spec:
           - "sleep"
           - "10"
       restartPolicy: Never
-  backoffLimit: 2    
+  backoffLimit: 2
